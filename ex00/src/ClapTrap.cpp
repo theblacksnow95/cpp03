@@ -1,5 +1,6 @@
 #include "ClapTrap.hpp"
 
+//default constructor
 ClapTrap::ClapTrap(): _name("Clappy"), _hitPoints(10), _egPoints(10), _attDamage(0)
 {
 	std::cout << "Default constructor called." << std::endl;
@@ -13,6 +14,7 @@ ClapTrap::ClapTrap(const std::string& name): _hitPoints(10), _egPoints(10),_attD
 	this->_name = name;
 }
 
+//copy contructor
 ClapTrap::ClapTrap(const ClapTrap& other): _name(other._name), _hitPoints(other._hitPoints), _egPoints(other._egPoints), _attDamage(other._attDamage)
 {
 	std::cout << "Copy constructor called." << std::endl;
