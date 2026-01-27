@@ -20,6 +20,11 @@ ClapTrap::ClapTrap(const ClapTrap& other): _name(other._name), _hitPoints(other.
 	std::cout << "Copy constructor called." << std::endl;
 }
 
+ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
+{
+	
+}
+
 const std::string& ClapTrap::getName()
 {
 	return (this->_name);
@@ -30,12 +35,12 @@ const int&	ClapTrap::getHits()
 	return (this->_hitPoints);
 }
 
-const int& ClapTrap::getEnergy()
+const int&	ClapTrap::getEnergy()
 {
 	return (this->_egPoints);
 }
 
-const int& ClapTrap::getAttack()
+const int&	ClapTrap::getAttack()
 {
 	return (this->_attDamage);
 }
