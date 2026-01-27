@@ -13,4 +13,5 @@ int	main()
 	other.takeDamage(5);
 	obj.attack("Paco");
 	obj.beRepaired(10);
+	std::cout << obj.getHits() << " hitpoints left" << std::endl;
 }
