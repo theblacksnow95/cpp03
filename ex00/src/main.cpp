@@ -3,15 +3,15 @@
 
 int	main()
 {
-	ClapTrap	obj;
+	ClapTrap	clp;
 	ClapTrap	other("paco");
 	
-	std::cout << obj.getName() << " Created" << std::endl;
-	obj.attack("Paco");
+	std::cout << clp.getName() << " Created" << std::endl;
+	clp.attack("Paco");
 	other.attack("Clappy");
-	obj.takeDamage(5);
+	clp.takeDamage(5);
 	other.takeDamage(5);
-	obj.attack("Paco");
-	obj.beRepaired(10);
-	std::cout << obj.getHits() << " hitpoints left" << std::endl;
+	clp.attack("Paco");
+	clp.beRepaired(10);
+	std::cout << clp.getHits() << " hitpoints left" << std::endl;
 }

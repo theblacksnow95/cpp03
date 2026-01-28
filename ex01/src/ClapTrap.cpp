@@ -3,7 +3,7 @@
 // Default constructor
 ClapTrap::ClapTrap(): _name("Clappy"), _hitPoints(10), _egPoints(10), _attDamage(0)
 {
-	std::cout << "Default constructor called." << std::endl;
+	std::cout << "Claptrap Default constructor called." << std::endl;
 }
 // Name constructor
 ClapTrap::ClapTrap(const std::string& name): _hitPoints(10), _egPoints(10),_attDamage(0) 
@@ -55,7 +55,7 @@ const int&	ClapTrap::getAttack()
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called." << std::endl;
+	std::cout << "ClapTrap Destructor called." << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target)
@@ -96,3 +96,4 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		this->_egPoints--;
 	}
 }
+
