@@ -39,11 +39,6 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "Destructor called." << std::endl;
 }
 
-void	DiamondTrap::test()
-{
-	std::cout << _name << " name, " << _hitPoints << " Hpoints, " << _egPoints << " EGpoints, " << _attDamage << " Attack damage." << std::endl;
-}
-
 void	DiamondTrap::whoAmI()
 {
 	std::cout << "Diamond name " << _name  << " -- Clap name " << ClapTrap::_name << std::endl;

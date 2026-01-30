@@ -17,7 +17,6 @@ class DiamondTrap: public FragTrap, public ScavTrap
 		~DiamondTrap();
 
 		void	whoAmI();
-		void	test();
 	private:
 		std::string	_name;
 };
