@@ -8,7 +8,7 @@ ClapTrap::ClapTrap(): _name("Clappy"), _hitPoints(10), _egPoints(10), _attDamage
 // Name constructor
 ClapTrap::ClapTrap(const std::string& name): _hitPoints(10), _egPoints(10),_attDamage(0) 
 {
-	std::cout << "Contructor called." << std::endl;
+	std::cout << "Constructor called." << std::endl;
 	if(name.empty())
 		_name = "Clappy";
 	this->_name = name;
@@ -76,8 +76,9 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if (_hitPoints > 0)
 	{
 		std::cout << "ClapTrap " << this->getName() << " takes " << amount << " points of damage!" << std::endl;
-		this->_attDamage = this->_attDamage + amount;
 		this->_hitPoints = this->_hitPoints - amount;
+		if (_hitPoints < 0)
+			_hitPoints = 0;
 	}
 	else
 		std::cout << "Hey!, its already dead, you are a monster F*** YOU." << std::endl;

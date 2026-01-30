@@ -1,6 +1,6 @@
 #################	TARGET & FLAGS	##################################
 
-TARGET = FragTrap
+TARGET = Diamontrap
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -g
 C98 = -std=c++98

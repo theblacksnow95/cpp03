@@ -1,14 +1,15 @@
 #include "ClapTrap.hpp"
 
 // Default constructor
-ClapTrap::ClapTrap(): _name("Clappy"), _hitPoints(10), _egPoints(10), _attDamage(0)
+ClapTrap::ClapTrap(): _name("Clappy"), _hitPoints(100), _egPoints(50), _attDamage(20)
 {
 	std::cout << "Claptrap Default constructor called." << std::endl;
 }
+
 // Name constructor
-ClapTrap::ClapTrap(const std::string& name): _hitPoints(10), _egPoints(10),_attDamage(0) 
+ClapTrap::ClapTrap(const std::string& name): _hitPoints(100), _egPoints(50),_attDamage(20) 
 {
-	std::cout << "Contructor called." << std::endl;
+	std::cout << "ClapTrap Constructor called." << std::endl;
 	if(name.empty())
 		_name = "Clappy";
 	this->_name = name;
@@ -19,6 +20,7 @@ ClapTrap::ClapTrap(const ClapTrap& other): _name(other._name), _hitPoints(other.
 {
 	std::cout << this->_name << ": Copy constructor called." << std::endl;
 }
+
 // Copy assignment operator overload
 ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
 {
@@ -66,7 +68,7 @@ void	ClapTrap::attack(const std::string& target)
 		std::cout << _name << ": No hit points available, cannot attack" << std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << this->getName() << " attacks " << target << ", causing 1 points of damage!" << std::endl;
+		std::cout << this->getName() << " attacks " << target << ", causing " << this->_attDamage << " points of damage!" << std::endl;
 		this->_egPoints--;
 	}
 }
@@ -75,12 +77,11 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (_hitPoints > 0)
 	{
-		std::cout << "ClapTrap " << this->getName() << " takes " << amount << " points of damage!" << std::endl;
-		this->_attDamage = this->_attDamage + amount;
+		std::cout << this->getName() << " takes " << amount << " points of damage!" << std::endl;
 		this->_hitPoints = this->_hitPoints - amount;
 	}
 	else
-		std::cout << "Hey!, its already dead, you are a monster F*** YOU." << std::endl;
+		std::cout << "Hey!, its already dead, you are a monster! F*** YOU!!" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -91,9 +92,8 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "No hit points left, cannot repair itself." << std::endl;
 	else
 	{
-		std::cout << "ClapTrap " << this->getName() << " has repaired " << amount << " hit points" << std::endl;
+		std::cout << this->getName() << " has repaired " << amount << " hit points" << std::endl;
 		this->_hitPoints = this->_hitPoints + amount;
 		this->_egPoints--;
 	}
 }
-

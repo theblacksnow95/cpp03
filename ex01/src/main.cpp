@@ -29,7 +29,6 @@ int	main()
 		a.takeDamage(20);
 		a.beRepaired(2);
 		a.guardGate();
-		std::cout << "ScavTrap name: " << scav.getName() << std::endl;
 		std::cout << GRN << a.getName() << " has: " << a.getHits() << " hit points, " << a.getEnergy() << " energy points, and " << a.getAttack() << " attack damage." << RST << std::endl;
 	}
 }

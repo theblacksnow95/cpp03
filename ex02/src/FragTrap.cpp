@@ -1,26 +1,24 @@
-#include "FlagTrap.hpp"
+#include "FragTrap.hpp"
 
-FlagTrap::FlagTrap()
+FragTrap::FragTrap(): ClapTrap()
 {
-	_name = "Flaggy";
-	_hitPoints = 100;
 	_egPoints = 100;
 	_attDamage = 30;
-	std::cout << _name << ": Flagtrap default constructor called." << std::endl;
+	std::cout << _name << ": FragTrap default constructor called." << std::endl;
 }
-FlagTrap::FlagTrap(const std::string& name)
+
+FragTrap::FragTrap(const std::string& name)
 {
 	if (name.empty())
 		this->_name = "Flaggy";
 	this->_name = name;
-	this->_hitPoints = 100;
 	this->_egPoints = 100;
 	this->_attDamage = 30;
-	std::cout << "Flagtrap constructor called" << std::endl;
+	std::cout << "FragTrap constructor called" << std::endl;
 }
 
 // Copy operator
-FlagTrap::FlagTrap(const FlagTrap& other)
+FragTrap::FragTrap(const FragTrap& other)
 {
 	this->_name = other._name;
 	this->_hitPoints = other._hitPoints;
@@ -29,7 +27,7 @@ FlagTrap::FlagTrap(const FlagTrap& other)
 }
 
 // copy assignment operator overload
-FlagTrap& FlagTrap::operator=(const FlagTrap& other)
+FragTrap& FragTrap::operator=(const FragTrap& other)
 {
 	if (this != &other)
 	{
@@ -41,13 +39,13 @@ FlagTrap& FlagTrap::operator=(const FlagTrap& other)
 	return (*this);
 }
 
-FlagTrap::~FlagTrap()
+FragTrap::~FragTrap()
 {
-	std::cout << "Flagtrap Destructor called." << std::endl;
+	std::cout << "FragTrap Destructor called." << std::endl;
 }
 
 
-void	highFivesGuys(void)
+void	FragTrap::highFivesGuys(void)
 {
-	
+	std::cout << "I frigging love  guys, HIGH FIVES FOR ALL!!" << std::endl;
 }
