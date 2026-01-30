@@ -5,7 +5,7 @@
 # include <string>
 # include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap 
+class ScavTrap: virtual public ClapTrap 
 {
 	public:
 		ScavTrap();
@@ -15,6 +15,10 @@ class ScavTrap: public ClapTrap
 		~ScavTrap();
 		void	attack(const std::string& target);
 		void	guardGate();
+	protected:
+		static int	_hitPoints_default;
+		static int	_egPoints_default;
+		static int	_attDamage_default;
 };
 
 #endif

@@ -1,8 +1,8 @@
 #################	TARGET & FLAGS	##################################
 
-TARGET = Diamontrap
+TARGET = diamondtrap
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -Wshadow -Wno-shadow
 C98 = -std=c++98
 
 SRCDIR = src
@@ -10,7 +10,7 @@ OBJDIR = obj
 INCLUDE = include
 #################	SOURCES			##################################
 
-SRC = $(SRCDIR)/main.cpp $(SRCDIR)/ClapTrap.cpp $(SRCDIR)/ScavTrap.cpp $(SRCDIR)/FragTrap.cpp
+SRC = $(SRCDIR)/main.cpp $(SRCDIR)/ClapTrap.cpp $(SRCDIR)/ScavTrap.cpp $(SRCDIR)/FragTrap.cpp $(SRCDIR)/DiamondTrap.cpp
 
 #################	OBJECTS			##################################
 

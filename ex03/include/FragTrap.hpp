@@ -10,7 +10,7 @@
 # define RED	"\033[0;31m"
 # define RST	"\033[0m"
 
-class FragTrap: public ClapTrap
+class FragTrap: virtual public ClapTrap
 {
 	public:
 		FragTrap();
@@ -18,7 +18,12 @@ class FragTrap: public ClapTrap
 		FragTrap(const FragTrap& other);
 		FragTrap& operator=(const FragTrap& other);
 		~FragTrap();
+
 		void	highFivesGuys(void);
+	protected:
+		static int			_hitPoints_default;
+		static int			_egPoints_default;
+		static int			_attDamage_default;
 };
 
 #endif

@@ -1,29 +1,34 @@
 #include "FragTrap.hpp"
 
+int	FragTrap::_hitPoints_default = 100;
+int	FragTrap::_egPoints_default = 100;
+int	FragTrap::_attDamage_default = 30;
+
 FragTrap::FragTrap(): ClapTrap()
 {
-	_egPoints = 100;
-	_attDamage = 30;
+	_name = "Flaggy";
+	_egPoints_default = 100;
+	_attDamage_default = 30;
 	std::cout << _name << ": FragTrap default constructor called." << std::endl;
 }
 
-FragTrap::FragTrap(const std::string& name)
+FragTrap::FragTrap(const std::string& name): ClapTrap(name)
 {
 	if (name.empty())
-		this->_name = "Flaggy";
-	this->_name = name;
-	this->_egPoints = 100;
-	this->_attDamage = 30;
+		_name = "Flaggy";
+	_name = name;
+	_egPoints_default = 100;
+	_attDamage_default = 30;
 	std::cout << "FragTrap constructor called" << std::endl;
 }
 
 // Copy operator
 FragTrap::FragTrap(const FragTrap& other)
 {
-	this->_name = other._name;
-	this->_hitPoints = other._hitPoints;
-	this->_egPoints = other._egPoints;
-	this->_attDamage = other._attDamage;
+	_name = other._name;
+	_hitPoints_default = other._hitPoints_default;
+	_egPoints_default = other._egPoints;
+	_attDamage_default = other._attDamage;
 }
 
 // copy assignment operator overload
@@ -31,10 +36,10 @@ FragTrap& FragTrap::operator=(const FragTrap& other)
 {
 	if (this != &other)
 	{
-		this->_name = other._name;
-		this->_hitPoints = other._hitPoints;
-		this->_egPoints = other._egPoints;
-		this->_attDamage = other._attDamage;
+		_name = other._name;
+		_hitPoints_default = other._hitPoints_default;
+		_egPoints_default= other._egPoints;
+		_attDamage_default = other._attDamage_default;
 	}
 	return (*this);
 }

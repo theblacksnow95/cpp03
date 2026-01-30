@@ -5,7 +5,7 @@
 int	main()
 {
 	{
-		std::cout << GRN << "Test1 :" << RST << std::endl;
+		std::cout << YLL << "Test1 :" << RST << std::endl;
 		FragTrap obj("Biggus");
 		FragTrap ob2("Dickus");
 		obj.attack("Dickus");
@@ -20,5 +20,6 @@ int	main()
 		trp.beRepaired(20);
 		trp.takeDamage(50);
 		frg.highFivesGuys();
+		trp.highFivesGuys();
 	}
 }

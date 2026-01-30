@@ -1,7 +1,8 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(): ClapTrap("Scavvy")
+ScavTrap::ScavTrap(): ClapTrap()
 {
+	_name = "Scavvy";
 	std::cout << "ScavTrap Default constructor called." << std::endl;
 }
 
@@ -19,7 +20,6 @@ ScavTrap::ScavTrap(const ScavTrap& other)
 	this->_hitPoints = other._hitPoints;
 	this->_egPoints = other._egPoints;
 	this->_attDamage = other._attDamage;
-
 }
 
 // Copy assignment operator overload
@@ -48,7 +48,7 @@ void	ScavTrap::attack(const std::string& target)
 		std::cout << _name << ": No hit points available, cannot attack" << std::endl;
 	else
 	{
-		std::cout << this->getName() << " attacks " << target << ", causing " << this->_attDamage << " points of damage!" << std::endl;
+		std::cout << this->getName() << " ScavTrap attacks " << target << ", causing " << this->_attDamage << " points of damage!" << std::endl;
 		this->_egPoints--;
 	}
 }
