@@ -36,10 +36,10 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& other)
 
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "Destructor called." << std::endl;
+	std::cout << "DiamondTrap Destructor called." << std::endl;
 }
 
 void	DiamondTrap::whoAmI()
 {
-	std::cout << "Diamond name " << _name  << " -- Clap name " << ClapTrap::_name << std::endl;
+	std::cout << "[Diamond name : " << _name  << "] -- [Clap name : " << ClapTrap::_name << "]" << std::endl;
 }

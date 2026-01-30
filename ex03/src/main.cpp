@@ -4,8 +4,7 @@ int	main()
 {
 	{
 		DiamondTrap dia("Jhonny");
-		DiamondTrap trpb("Helio");
-		dia.test();
+		ClapTrap trpb("Helio");
 		dia.whoAmI();
 		dia.guardGate();
 		dia.highFivesGuys();
