@@ -6,13 +6,17 @@ int	ScavTrap::_attDamage_default = 20;
 ScavTrap::ScavTrap(): ClapTrap()
 {
 	_name = "Scavvy";
+	_egPoints = _egPoints_default;
+	_attDamage = _attDamage_default;
 	std::cout << "ScavTrap Default constructor called." << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string& name): ClapTrap(name)
 {
 	if (name.empty())
-		this->_name = "Scavvy";
+		this->_name = "Scavvy";	
+	_egPoints = _egPoints_default;
+	_attDamage = _attDamage_default;
 	std::cout << "ScavTrap constructor called " << std::endl;
 }
 
@@ -23,7 +27,6 @@ ScavTrap::ScavTrap(const ScavTrap& other)
 	this->_hitPoints_default = other._hitPoints_default;
 	this->_egPoints_default = other._egPoints_default;
 	this->_attDamage_default = other._attDamage_default;
-
 }
 
 // Copy assignment operator overload
@@ -47,19 +50,13 @@ ScavTrap::~ScavTrap()
 void	ScavTrap::attack(const std::string& target)
 {
 	if (this->_egPoints <= 0 )
-	{
 		std::cout << _name << ": No energy available, cannot attack" << std::endl;
-		return ;
-	}
-	if (this->_hitPoints_default <= 0)
-	{
+	if (this->_hitPoints <= 0)
 		std::cout << _name << ": No hit points available, cannot attack" << std::endl;
-		return ;
-	}
 	else
 	{
-		std::cout << this->getName() << " Scavtrap attacks " << target << ", causing " << this->_attDamage_default << " points of damage!" << std::endl;
-		this->_egPoints_default--;
+		std::cout << this->getName() << " Scavtrap attacks " << target << ", causing " << this->_attDamage << " points of damage!" << std::endl;
+		this->_egPoints--;
 	}
 }
 

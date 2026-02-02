@@ -17,12 +17,17 @@ int	main()
 
 		std::cout << std::endl << YLL << "Test2 : " << RST << std::endl;
 		DiamondTrap trap("Manu");
+		DiamondTrap b(trap);
+		b.attack("IT");
+		std::cout << b.getHits() << " -- "<< b.getEnergy() << " -- " << b.getAttack() <<std::endl;
 		trap.attack("Zeus");
-		trap.takeDamage(500);
 		trap.beRepaired(100);
 		trap.attack("Zeus");
+		trap.takeDamage(50);
 		trap.attack("Other");
-		trap.attack("Other");
-		std::cout << trap.getHits() << " -- "<< trap.getEnergy() << std::endl;
+		trap.beRepaired(28);
+		trap.guardGate();
+		b.whoAmI();
+		std::cout << trap.getHits() << " -- "<< trap.getEnergy() << " -- " << trap.getAttack() <<std::endl;
 	}
 }

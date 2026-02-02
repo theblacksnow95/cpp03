@@ -79,6 +79,8 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	{
 		std::cout << this->getName() << " takes " << amount << " points of damage!" << std::endl;
 		this->_hitPoints = this->_hitPoints - amount;
+		if (_hitPoints < 0)
+			_hitPoints = 0;
 	}
 	else
 		std::cout << "Hey!, its already dead, you are a monster! F*** YOU!!" << std::endl;
@@ -93,7 +95,10 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	else
 	{
 		std::cout << this->getName() << " has repaired " << amount << " hit points" << std::endl;
-		this->_hitPoints = this->_hitPoints + amount;
+		if (_hitPoints + amount > 100)
+			_hitPoints = 100;
+		else
+			this->_hitPoints = this->_hitPoints + amount;
 		this->_egPoints--;
 	}
 }

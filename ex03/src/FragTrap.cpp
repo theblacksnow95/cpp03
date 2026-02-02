@@ -7,8 +7,8 @@ int	FragTrap::_attDamage_default = 30;
 FragTrap::FragTrap(): ClapTrap()
 {
 	_name = "Flaggy";
-	_egPoints_default = 100;
-	_attDamage_default = 30;
+	_egPoints = _egPoints_default;
+	_attDamage = _attDamage_default;
 	std::cout << _name << ": FragTrap default constructor called." << std::endl;
 }
 
@@ -17,8 +17,8 @@ FragTrap::FragTrap(const std::string& name): ClapTrap(name)
 	if (name.empty())
 		_name = "Flaggy";
 	_name = name;
-	_egPoints_default = 100;
-	_attDamage_default = 30;
+	_egPoints = _egPoints_default;
+	_attDamage = _attDamage_default;
 	std::cout << "FragTrap constructor called" << std::endl;
 }
 
@@ -38,7 +38,7 @@ FragTrap& FragTrap::operator=(const FragTrap& other)
 	{
 		_name = other._name;
 		_hitPoints_default = other._hitPoints_default;
-		_egPoints_default= other._egPoints;
+		_egPoints_default = other._egPoints_default;
 		_attDamage_default = other._attDamage_default;
 	}
 	return (*this);
