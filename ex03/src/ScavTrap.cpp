@@ -47,9 +47,15 @@ ScavTrap::~ScavTrap()
 void	ScavTrap::attack(const std::string& target)
 {
 	if (this->_egPoints <= 0 )
+	{
 		std::cout << _name << ": No energy available, cannot attack" << std::endl;
+		return ;
+	}
 	if (this->_hitPoints_default <= 0)
+	{
 		std::cout << _name << ": No hit points available, cannot attack" << std::endl;
+		return ;
+	}
 	else
 	{
 		std::cout << this->getName() << " Scavtrap attacks " << target << ", causing " << this->_attDamage_default << " points of damage!" << std::endl;
