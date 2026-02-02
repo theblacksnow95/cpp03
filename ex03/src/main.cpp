@@ -18,8 +18,11 @@ int	main()
 		std::cout << std::endl << YLL << "Test2 : " << RST << std::endl;
 		DiamondTrap trap("Manu");
 		DiamondTrap b(trap);
+		DiamondTrap a("Louis");
+		a = b;
+		std::cout << "values of a: "<< a.getHits() << " -- "<< a.getEnergy() << " -- " << a.getAttack() <<std::endl;
 		b.attack("IT");
-		std::cout << b.getHits() << " -- "<< b.getEnergy() << " -- " << b.getAttack() <<std::endl;
+		std::cout << "Values of b: " << b.getHits() << " -- "<< b.getEnergy() << " -- " << b.getAttack() <<std::endl;
 		trap.attack("Zeus");
 		trap.beRepaired(100);
 		trap.attack("Zeus");
@@ -28,6 +31,7 @@ int	main()
 		trap.beRepaired(28);
 		trap.guardGate();
 		b.whoAmI();
-		std::cout << trap.getHits() << " -- "<< trap.getEnergy() << " -- " << trap.getAttack() <<std::endl;
+		a.whoAmI();
+		std::cout << "values of trap: " << trap.getHits() << " -- "<< trap.getEnergy() << " -- " << trap.getAttack() <<std::endl;
 	}
 }
