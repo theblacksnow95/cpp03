@@ -29,6 +29,7 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& other)
 		_hitPoints = other._hitPoints;
 		_egPoints = other._egPoints;
 		_attDamage = other._attDamage;
+		ClapTrap::_name = other._name + "_clap_name";
 	}
 	return (*this);
 }

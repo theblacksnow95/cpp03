@@ -32,6 +32,9 @@ int	main()
 		trap.guardGate();
 		b.whoAmI();
 		a.whoAmI();
+		a.attack("Zeus");
+		a.guardGate();
+		a.highFivesGuys();
 		std::cout << "values of trap: " << trap.getHits() << " -- "<< trap.getEnergy() << " -- " << trap.getAttack() <<std::endl;
 	}
 }
